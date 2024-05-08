@@ -1,0 +1,41 @@
+## How to Merge Changes and Push to Heptapod.host (Mercurial)
+
+### Merging Changes:
+
+After a pull request has been reviewed and approved, it's time to merge the changes into the main branch of the repository. Follow these steps to merge changes using Mercurial:
+
+1. **Update Local Repository**: Before merging, ensure that your local repository is up to date with the latest changes from the remote repository. Use the `hg pull` command to fetch any updates from Heptapod.host:
+   ```shell
+   hg pull
+   ```
+
+2. **Merge Changes**: Once your local repository is up to date, use the `hg update` command to switch to the branch containing the changes you want to merge. For example:
+   ```shell
+   hg update feature-branch
+   ```
+   Then, use the `hg merge` command to merge the changes from the feature branch into the main branch. Resolve any conflicts that may arise during the merge process:
+   ```shell
+   hg merge main
+   ```
+
+3. **Commit Merged Changes**: After resolving any conflicts and completing the merge, commit the merged changes to the local repository using the `hg commit` command:
+   ```shell
+   hg commit -m "Merge feature-branch into main"
+   ```
+
+### Pushing Changes to Heptapod.host:
+
+Once the changes have been merged locally, it's time to push them to Heptapod.host for review and further collaboration. Follow these steps to push changes using Mercurial:
+
+1. **Push Changes to Remote**: Use the `hg push` command to push the committed changes from your local repository to Heptapod.host. Specify the branch you want to push, typically the main branch, and provide any necessary credentials for authentication:
+   ```shell
+   hg push -b main
+   ```
+
+2. **Create Pull Request**: After pushing the changes to Heptapod.host, navigate to the repository on the platform and create a new pull request. Provide details about the changes made, the purpose of the pull request, and any relevant information for reviewers.
+
+3. **Review and Merge Pull Request**: Collaborate with your team members to review the changes in the pull request. Once the changes have been reviewed and approved, merge the pull request into the main branch of the repository using the options provided on Heptapod.host.
+
+4. **Ensure Continuous Integration (CI) Compliance**: If your team has configured continuous integration (CI) pipelines on Heptapod.host, ensure that your changes pass all required tests and checks before merging the pull request. Address any issues identified by the CI pipeline before proceeding with the merge.
+
+Following this structured workflow for merging changes and pushing them to Heptapod.host ensures efficient collaboration and version control within your team of 10 using Mercurial.

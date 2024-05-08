@@ -1,0 +1,64 @@
+# Site output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Dependency directories
+node_modules/
+vendor/
+.bundle/
+
+# Specific bundle gems
+vendor/bundle/
+vendor/cache/
+vendor/gems/
+vendor/ruby/
+
+# Ignore environment configuration files
+.env
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore Jekyll configuration secret files
+.jekyll-secrets
+
+# Ignore personal Jekyll configuration
+.jekyll-metadata
+
+# Ignore Bundler config and installed gems location
+.bundle/
+
+# Ignore the default SQLite database used by Jekyll's 'jekyll-admin' plugin
+.jekyll-admin-data.sqlite3
+
+# Backup files created by text editors or operating systems
+*~
+*.swp
+*.bak
+*.tmp
+*.temp
+
+# Ignore Yarn Integrity file
+.yarn-integrity
+
+# Ignore JetBrains IDE files
+.idea/
+*.iml
+
+# Ignore Visual Studio Code files
+.vscode/
+
+# Ignore Windows thumbnail cache files
+Thumbs.db
+
+# Ignore Windows system files
+ehthumbs.db
+Desktop.ini
+
+# Optional: Exclude personal assets or draft posts not meant for production
+assets/drafts/
+_drafts/
+_notes/
+

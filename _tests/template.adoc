@@ -1,0 +1,24 @@
+= Template
+:layout: default
+:doctype: book
+:title: Template
+:collection: tests
+:nav_order: 100
+:nav_exclude: false
+//:page-permalink: /tests/computing-inventory
+//:nofooter:
+//:reproducible:
+:sectnums:
+:toc:
+:toc-title: Table of Contents
+:toclevels: 2
+:icons: font
+:mermaid: true
+:revdate: 0.1, 2024-05-01
+:source-highlighter: rouge
+//:rouge-style: imca_cat
+
+toc::[]
+
+== Overview
+

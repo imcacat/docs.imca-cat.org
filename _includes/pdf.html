@@ -1,0 +1,10 @@
+<figure>
+    <a href="{{ include.url }}">
+        <img src="{{ include.file }}" style="max-width: {{ include.max-width }};" alt="{{ include.alt }}" />
+    </a>
+    <figcaption>{{ include.caption }}</figcaption>
+</figure>
+
+{% capture download_note %}
+The latest version of {{ site.product_name }} is now available.
+{% endcapture %}

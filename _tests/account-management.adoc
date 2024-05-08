@@ -1,0 +1,85 @@
+= IMCA-CAT Account Management
+:layout: default
+:doctype: book
+:title: Account Management
+:collection: tests
+:nav_order: 1
+:nav_exclude: true
+//:page-permalink: /tests/account-management
+//:nofooter:
+:reproducible:
+:sectnums:
+:toc: macro
+:toc-title: Table of Contents
+:toclevels: 1
+:imagesdir: /assets/images
+:revdate: 0.1, 2024-05-01
+:source-highlighter: rouge
+:rouge-style: imca_cat
+
+toc::[]
+
+= Account Management Guide
+
+This document outlines the procedures for creating and deleting user accounts, along with related scripts and additional resources.
+
+== Creating Accounts
+
+Creating an account is generally done by running the script located at `crow:/root/scripts/add-account`.
+
+After the account creation, there are a few tasks that need to be completed manually, such as running Ansible.
+
+[NOTE]
+====
+Running Ansible with the "users" tag will update everything about users, including deleting users.
+====
+
+== Deleting Accounts
+
+To delete an account, start by disabling the account:
+
+[source,shell]
+----
+ssh crow
+/root/scripts/ldap/account-management -d USERNAME
+----
+
+Once you are ready to delete, first add the username into the appropriate "former" variable in `/srv/ansible/group_vars/all.yml`. Then you can run:
+
+[source,shell]
+----
+ansible-playbook -CD -t deleteUsers /srv/ansible/SITE.yml
+----
+
+[WARNING]
+====
+This operation isn't heavily tested and running it will also likely delete some user data:
+
+[source,shell]
+ansible-playbook -CD -t users /srv/ansible/SITE.yml
+====
+
+== Useful Scripts and Links
+
+* Create Account: `crow:/root/scripts/add-account`
+* Password Reset, Lock, Deactivate: `crow:/root/scripts/ldap/account-management`
+* Find and Archive User Data: `donkey:/root/bin/archive-account`
+* Generate Report About Accounts (runs daily via cron): `crow:/root/scripts/ldap/account-report`
+* More LDAP management scripts: `crow:/root/scripts/ldap/`
+* Database utilities: BEAMTIME (ScheduleAccounts, etc), ACCOUNTS
+* link:https://gold.imca.aps.anl.gov/phpldapadmin/[phpLDAPadmin]
+
+== Secondary Passwords
+
+There are secondary passwords for some accounts which allow staff to log in as another user without needing to know the user's primary password. This is achieved through a PAM module called `pam_redirector.so` interacting with a daemon called `myauthd`.
+
+See the following for more details:
+
+* `crow:/srv/software/libpam-redirector/`
+* `crow:/srv/software/myauthd/`
+* `/etc/pam.d/password-auth`
+* `/etc/pam.d/system-auth`
+
+== See Also
+
+* link:https://example.com/ansible[Ansible]

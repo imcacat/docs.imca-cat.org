@@ -1,0 +1,34 @@
+= Welcome Home
+:layout: home
+:title: Home
+:collection: docs
+:nav_order: 1
+:page-permalink: /
+//:nofooter:
+:reproducible:
+:sectnums:
+:toc: macro
+:toc-title: Table of Contents
+:toclevels: 1
+:imagesdir: /assets/images
+:revdate: 0.1, 2024-05-01
+:imca-cat-url: https://imca-cat.org
+:documentation-guide-url: https://docs.imca-cat.org/documentation-guide
+
+toc::[]
+
+== Introduction
+
+Welcome to our documentation site. Here, you can find all information pertaining to operations at the IMCA-CAT beamline at Sector 17 of the Advanced Photon Source.
+
+== Explore
+
+* link:{imca-cat-url}[IMCA-CAT Website]
+
+== Additional Resources
+
+You can add links to external resources or other sections of the documentation. Please reference the following guide for instructions on how to update this site.
+
+* link:{documentation-guide-url}[Documentation Guide]
+
+

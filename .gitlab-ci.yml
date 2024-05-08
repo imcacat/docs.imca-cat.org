@@ -1,0 +1,79 @@
+stages:
+  - build
+
+variables:
+  JEKYLL_ENV: production
+  LC_ALL: C.UTF-8
+  GEM_HOME: $CI_BUILDS_DIR/gems
+  BUNDLE_PATH: 'vendor/bundle'
+  BIN_RM: /usr/bin/rm
+  BIN_MKDIR: /usr/bin/mkdir
+  DOCKER_DRIVER: overlay
+  SERVER_NAME: "salmon.imca.aps.anl.gov"
+  CONNECTION_STR: "jrgochan@cricket.imca.aps.anl.gov"
+  ENVIRONMENT: "production"
+  PROJECT_NAME: "docs.imca-cat.org"
+  RSYNC_EXCLUDES: "--exclude 'storage' --exclude '.env' --exclude 'node_modules' --exclude 'keys' --exclude '.git' --exclude '.yarn-cache' --exclude '.hg'"
+  DEPLOY_PATH: "/srv/www/${PROJECT_NAME}"
+  SERVE_PATH: "/srv/www/${PROJECT_NAME}/public"
+  PRIVATE_KEY: "/home/gitlab-runner/.ssh/id_rsa_testing"
+  CI_CLEVER_CLOUD_FLAVOR: XS
+
+cleanup:
+  stage: cleanup
+  script:
+    - $BIN_RM -rf $DEPLOY_PATH
+    - $BIN_MKDIR -p $SERVE_PATH
+  tags:
+    - linux
+
+build:
+  stage: build
+  image: ruby:3.1.2
+  script:
+    - gem install bundler:2.2.22
+    - bundle config set --local path $BUNDLE_PATH
+    - bundle install
+    - bundle exec jekyll build -d public --trace
+  artifacts:
+    paths:
+      - public
+  tags:
+    - clever-cloud
+
+test:
+  stage: test
+  image: ruby:3.1.2
+  script:
+    - gem install bundler:2.2.22
+    - bundle config set --local path $BUNDLE_PATH
+    - bundle install
+    - bundle exec jekyll build -d test
+  artifacts:
+    paths:
+      - test
+  except:
+    variables:
+      - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  tags:
+    - linux
+
+deploy:
+  stage: deploy
+  image: ruby:3.1.2
+  script:
+    - 'which sudo || ( apt-get update && apt-get install -y sudo )'
+    - sudo mkdir -p ~/.ssh
+    - sudo chown -R $USER ~/.ssh
+    - eval "$(ssh-agent -s)"
+    - ssh-add "$PRIVATE_KEY"
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\\n\\tStrictHostKeyChecking no\\n\\n" > ~/.ssh/config'
+    - sudo ssh "$CONNECTION_STR" "rm -rf $SERVE_PATH $DEPLOY_PATH"
+    - sudo ssh "$CONNECTION_STR" "mkdir -p $SERVE_PATH $DEPLOY_PATH"
+    - rsync -avzq --delete -e 'ssh' ./public/ "$CONNECTION_STR:$SERVE_PATH"
+  tags:
+    - linux
+  only:
+    variables:
+      - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  environment: production
