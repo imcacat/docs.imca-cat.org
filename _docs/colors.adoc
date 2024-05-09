@@ -3,8 +3,8 @@
 :title: Color Palette
 :collection: docs
 :nav_order: 4
-//:page-permalink: /color-palette
-//:nofooter:
+:page-permalink: /color-palette
+:nofooter:
 :reproducible:
 :sectnums:
 :toc: macro
@@ -29,9 +29,9 @@ I need to add some style info
 [options="header"]
 |===
 | Combination | HEX | RGB
-| Red | pass:[<span class="logo-red">EA332C</span>] | pass:[<span class="logo-red">rgb(234, 51, 44)</span>]
-| Complementary | pass:[<span class="logo-red-complementary">2CE3EA</span>] |
-| Monochromatic | pass:[<span class="logo-red-monochromatic">CE1B15</span>] |
+| Red | pass:[<span class="logo-red" style="color: #EA332C;">EA332C</span>] | pass:[<span class="logo-red" style="color: rgb(234, 51, 44);">rgb(234, 51, 44)</span>]
+| Complementary | pass:[<span class="logo-red-complementary" style="color: #2CE3EA;">2CE3EA</span>] |
+| Monochromatic | pass:[<span class="logo-red-monochromatic" style="color: #CE1B15;">CE1B15</span>] |
 |===
 
 [#index_blue_header]
@@ -39,7 +39,7 @@ I need to add some style info
 [options="header"]
 |===
 | Combination | HEX | RGB
-| Blue | pass:[<span class="logo-blue">285EE7</span>] | pass:[<span class="logo-blue">rgb(40, 94, 231)</span>]
-| Complementary | pass:[<span class="logo-blue-complementary">E7B128</span>] |
-| Monochromatic | pass:[<span class="logo-blue-monochromatic">1648C6</span>] |
+| Blue | pass:[<span class="logo-blue" style="color: #285EE7;">285EE7</span>] | pass:[<span class="logo-blue" style="color: rgb(40, 94, 231);">rgb(40, 94, 231)</span>]
+| Complementary | pass:[<span class="logo-blue-complementary" style="color: #E7B128;">E7B128</span>] |
+| Monochromatic | pass:[<span class="logo-blue-monochromatic" style="color: #1648C6;">1648C6</span>] |
 |===
