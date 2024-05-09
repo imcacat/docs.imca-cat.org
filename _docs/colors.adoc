@@ -3,7 +3,7 @@
 :title: Color Palette
 :collection: docs
 :nav_order: 4
-:page-permalink: /color-palette
+:page-permalink: /colors
 :nofooter:
 :reproducible:
 :sectnums:
