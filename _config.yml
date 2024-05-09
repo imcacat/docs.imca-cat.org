@@ -4,7 +4,7 @@ site:
   description: >-
     A place for documents and things.
   baseurl: "" # the subpath of your site, e.g. /blog
-  url: "https://docs.imca-cat.org"
+  url: "https://imcacat.github.io/docs.imca-cat.org/"
   
   # Language
   lang: en-US
