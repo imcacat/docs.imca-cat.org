@@ -1,4 +1,5 @@
-# This workflow deploys a Jekyll site to GitHub Pages using GitHub Actions
+# This GitHub Actions workflow automates the deployment of a Jekyll site to GitHub Pages.
+
 name: Deploy Jekyll Site to GitHub Pages
 
 # Triggers the workflow on push events to the main branch and allows manual triggers
@@ -38,6 +39,8 @@ jobs:
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # Provides access to deploy to GitHub Pages
 
       - name: Build Jekyll Site
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
