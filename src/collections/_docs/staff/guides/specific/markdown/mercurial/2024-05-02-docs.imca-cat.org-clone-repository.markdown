@@ -1,0 +1,49 @@
+Certainly! Here's a detailed explanation of how to clone the repository, make changes, and publish using Mercurial for a Jekyll-based documentation site with the latest Just-The-Docs theme:
+
+## How to Clone the Repository, Make Changes, and Publish (Mercurial)
+
+1. **Cloning the Repository**:
+
+   Cloning a repository creates a local copy of the project on your machine, allowing you to work on it without affecting the original repository. To clone the repository using Mercurial, follow these steps:
+
+   - Open your terminal or command prompt.
+   - Navigate to the directory where you want to store the local copy of the repository using the `cd` command. For example:
+     ```shell
+     cd path/to/desired/directory
+     ```
+   - Use the `hg clone` command followed by the URL of the repository. Replace `[repository_URL]` with the actual URL of the repository you want to clone. For example:
+     ```shell
+     hg clone [repository_URL]
+     ```
+   - Press Enter. Mercurial will now download the entire repository to your local machine.
+
+   **Example:**
+
+   Let's say you want to clone a repository named "example-repo" hosted on Bitbucket, and its URL is `https://bitbucket.org/username/example-repo`. You would use the following command:
+   ```shell
+   hg clone https://bitbucket.org/username/example-repo
+   ```
+
+2. **Making Changes**:
+
+   After cloning the repository, you can make changes to the files in your local copy. Follow these steps to make changes:
+
+   - Navigate to the directory of the cloned repository in your terminal using the `cd` command.
+   - Use your preferred text editor to open the files you want to modify.
+   - Make the desired changes to the files. You can add, modify, or delete content as needed.
+
+3. **Publishing Changes**:
+
+   Once you've made your changes and are ready to share them with others, you need to publish them to the remote repository. Since you're using Jekyll-based documentation with the latest Just-The-Docs theme, the publishing process may involve pushing changes to a specific branch or triggering a build process. Follow these general steps to publish your changes:
+
+   - **Stage Changes**: Use the `hg add` command to stage the changes you want to include in the next commit. For example, to stage all changes, use:
+     ```shell
+     hg add .
+     ```
+   - **Commit Changes**: Use the `hg commit` command to commit your staged changes with a descriptive commit message. For example:
+     ```shell
+     hg commit -m "Add descriptive commit message here"
+     ```
+   - **Push Changes**: Depending on your specific setup, you may need to push changes to a specific branch or trigger a build process to publish the changes. This step may involve interacting with your version control system (e.g., Bitbucket, GitHub) or a continuous integration/continuous deployment (CI/CD) pipeline.
+
+   Ensure you follow any specific guidelines or workflows set up for your Jekyll-based documentation site with the Just-The-Docs theme when publishing changes.
