@@ -83,7 +83,7 @@ if [ "$SERVE" = "true" ]; then
         echo "Serving the Jekyll site locally..."
     fi
     bundle install --path vendor/bundle
-    bundle exec jekyll serve --trace --unpublished --livereload --watch
+    bundle exec jekyll serve --trace --unpublished --livereload --watch --disable-disk-cache
 fi
 
 if [ "$DEPLOY" = "true" ]; then

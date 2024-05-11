@@ -220,6 +220,7 @@ DEPENDENCIES
   jekyll-asciinema
   jekyll-avatar
   jekyll-feed
+  jekyll-include-cache
   jekyll-optional-front-matter
   jekyll-seo-tag
   jekyll-toc

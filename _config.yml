@@ -1,150 +1,226 @@
-# _config.yml
-site:
-  title: IMCA-CAT Documentation
-  description: >-
-    A place for documents and things.
-  baseurl: "" # the subpath of your site, e.g. /blog
-  url: "https://imcacat.github.io/docs.imca-cat.org/"
-  
-  # Language
-  lang: en-US
-  
-  nav_external_links:
-    "imca_cat.org": "https://imca-cat.org"
-  
-  # Build settings
-  theme: just-the-docs
-  permalink: pretty
-  plugins:
-    - jekyll-feed
-    - jekyll-asciidoc
-  
-  liquid:
-    error_mode: warn
-    # error_mode: strict
-    strict_variables: true
-    strict_filters: true
-  
-  # Exclude from production build
-  exclude:
-    - Gemfile
-    - Gemfile.lock
-    - vendor/bundle
-    - vendor/cache
-    - vendor/gems
-    - vendor/ruby
-  
-  include:
-    - _docs
+---
+title: IMCA-CAT Documentation
+description: A place for documents and things.
 
+# Language
+lang: en-US
+
+# Serving
+url                 : "https://imcacat.github.io/docs.imca-cat.org/"
+host                : 127.0.0.1
+port                : 4000
+baseurl             : "" # the subpath of your site, e.g. /blog
+detach              : false
+show_dir_listing    : false
+ 
+nav_external_links:
+  "imca_cat.org": "https://imca-cat.org"
+
+# Outputting
+permalink           : date
+paginate_path       : /page:num
+timezone            : America/Chicago
+
+quiet               : false
+verbose             : true
+defaults            : []
+
+theme: just-the-docs
+
+# Where things are
+source              : ./src
+destination         : ./_site
+collections_dir     : ./src/collections
+
+# Plugins
+#plugins_dir         : _plugins # takes an array of strings and loads plugins in that order
+whitelist           : []
+plugins             : 
+  - jekyll-asciidoc
+  - jekyll-include-cache
+  - jekyll-feed
+
+layouts_dir         : _layouts
+data_dir            : _data
+includes_dir        : _includes
+sass:
+  sass_dir: _sass
+collections:
+  posts:
+    output          : true
+  tests:
+    output          : true
+  docs:
+    output          : true
+    permalink       : /:path/:title
+
+# Handling Reading
+safe                : false
+
+include             :
+  - .htaccess
+
+exclude:
+ # from https://github.com/jekyll/jekyll/blob/master/lib/site_template/_config.yml:
+   - .sass-cache/
+   - .jekyll-cache/
+   - gemfiles/
+   - Gemfile
+   - Gemfile.lock
+   - node_modules/
+   - vendor/bundle/
+   - vendor/cache/
+   - vendor/gems/
+   - vendor/ruby/
+ # specific to the theme website:
+   - bin/
+   - lib/
+   - "*.gemspec"
+   - "*.gem"
+   - LICENSE.txt
+   - package.json
+   - package-lock.json
+   - Rakefile
+   - README.md
+   - CODE_OF_CONDUCT.md
+   - docker-compose.yml
+   - Dockerfile
+ # theme test code
+   - fixtures/
+
+keep_files          :
+  - ".git"
+  - ".svn"
+  - ".hg"
+
+encoding            : "utf-8"
+markdown_ext        : "markdown,mkdown,mkdn,mkd,md"
+strict_front_matter : false
+
+# Filtering Content
+show_drafts         : null
+limit_posts         : 0
+future              : false
+unpublished         : false
+
+# Liquid profiler
+# Generate a Liquid rendering profile to help you identify performance bottlenecks.
+# profile: BOOL
+# --profile
+profile: true
+liquid:
+  error_mode: warn
+  # error_mode: strict
+  strict_filters: false
+  strict_variables: false
+
+# Conversion
+markdown            : kramdown
+highlighter         : rouge
+lsi                 : false
+excerpt_separator   : "\n\n"
+incremental         : false
+
+# Markdown Processors
+kramdown:
+  auto_ids          : true
+  entity_output     : as_char
+  toc_levels        : [1, 2, 3, 4, 5, 6]
+  smart_quotes      : lsquo,rsquo,ldquo,rdquo
+  input             : GFM
+  hard_wrap         : false
+  footnote_nr       : 1
+  show_warnings     : false
+
+# Theme options
+just_the_docs:
+  # Define which collections are used in just-the-docs
+  collections:
+    # Reference the "tests" collection
+    tests:
+       # Give the collection a name
+       name: Tests
+       # Exclude the collection from the navigation
+       # Supports true or false (default)
+       nav_exclude: true
+       # Fold the collection in the navigation
+       # Supports true or false (default)
+       nav_fold: true  # note: this option is new in v0.4
+       # Exclude the collection from the search
+       # Supports true or false (default)
+       search_exclude: true
+       output: false
+    docs:
+      # Give the collection a name
+      name: docs
+      # Exclude the collection from the navigation
+      # Supports true or false (default)
+      nav_exclude: false
+      # Fold the collection in the navigation
+      # Supports true or false (default)
+      nav_fold: false  # note: this option is new in v0.4
+      # Exclude the collection from the search
+      # Supports true or false (default)
+      search_exclude: false
+      output: true
+ 
   mermaid:
     # Version of mermaid library
     # Pick an available version from https://cdn.jsdelivr.net/npm/mermaid/
-    version: "10.9.0"
+    version: assets/js/mermaid.min.js
+
+   # Navigation
+  aux_links:
+    "IMCA-CAT Website": "https://imca-cat.org"
+
+  # Enable or disable the site search
+  # Supports true (default) or false
+  search_enabled: true
+  search_full_content: true
   
-  # Jekyll Collection Structure
-  collections:
-    tests:
-      permalink: "/tests/:path/"
-      output: true
-    docs:
-      permalink: "/:path/"
-      output: true
-  
-  # Markdown Options
-  markdown: kramdown
-  kramdown:
-    input: GFM
-    hard_wrap: false
-    toc_levels: 1..6
-  
-  # Theme options
-  just_the_docs:
-    # Define which collections are used in just-the-docs
-    collections:
-      # Reference the "tests" collection
-      tests:
-        # Give the collection a name
-        name: Tests
-        # Exclude the collection from the navigation
-        # Supports true or false (default)
-        nav_exclude: true
-        # Fold the collection in the navigation
-        # Supports true or false (default)
-        nav_fold: true  # note: this option is new in v0.4
-        # Exclude the collection from the search
-        # Supports true or false (default)
-        search_exclude: true
-        output: false
-      docs:
-        # Give the collection a name
-        name: docs
-        # Exclude the collection from the navigation
-        # Supports true or false (default)
-        nav_exclude: false
-        # Fold the collection in the navigation
-        # Supports true or false (default)
-        nav_fold: false  # note: this option is new in v0.4
-        # Exclude the collection from the search
-        # Supports true or false (default)
-        search_exclude: false
-        output: true
-  
-    mermaid:
-      # Version of mermaid library
-      # Pick an available version from https://cdn.jsdelivr.net/npm/mermaid/
-      version: assets/js/mermaid.min.js
-  
-    # Navigation
-    aux_links:
-      "IMCA-CAT Website": "https://imca-cat.org"
-  
-    # Enable or disable the site search
+  search:
+    # Split pages into sections that can be searched individually
+    # Supports 1 - 6, default: 2
+    heading_level: 2
+    # Maximum amount of previews per search result
+    # Default: 3
+    previews: 3
+    # Maximum amount of words to display before a matched word in the preview
+    # Default: 5
+    preview_words_before: 5
+    # Maximum amount of words to display after a matched word in the preview
+    # Default: 10
+    preview_words_after: 10
+    # Set the search token separator
+    # Default: /[\s\-/]+/
+    # Example: enable support for hyphenated search words
+    tokenizer_separator: /[\s/]+/
+    # Display the relative url in search results
     # Supports true (default) or false
-    search_enabled: true
-    search_full_content: true
-    
-    search:
-      # Split pages into sections that can be searched individually
-      # Supports 1 - 6, default: 2
-      heading_level: 2
-      # Maximum amount of previews per search result
-      # Default: 3
-      previews: 3
-      # Maximum amount of words to display before a matched word in the preview
-      # Default: 5
-      preview_words_before: 5
-      # Maximum amount of words to display after a matched word in the preview
-      # Default: 10
-      preview_words_after: 10
-      # Set the search token separator
-      # Default: /[\s\-/]+/
-      # Example: enable support for hyphenated search words
-      tokenizer_separator: /[\s/]+/
-      # Display the relative url in search results
-      # Supports true (default) or false
-      rel_url: true
-      # Enable or disable the search button that appears in the bottom right corner of every page
-      # Supports true or false (default)
-      button: true
-      # Focus the search input by pressing `ctrl + focus_shortcut_key` (or `cmd + focus_shortcut_key` on macOS)
-      focus_shortcut_key: 'k'
-    
-    enable_copy_code_button: true
+    rel_url: true
+    # Enable or disable the search button that appears in the bottom right corner of every page
+    # Supports true or false (default)
+    button: true
+    # Focus the search input by pressing `ctrl + focus_shortcut_key` (or `cmd + focus_shortcut_key` on macOS)
+    focus_shortcut_key: 'k'
   
-    # Color scheme
-    color_scheme: dark # available: "dark", "light", "air", "sun", "aqua", "forest", "midnight", "autumn", "dusk"
-    # Custom colors
-    primary_color: "#0a0a0a"
-    #accent_color: "#c7254e"
-    accent_color: #285ee7
-  
-    # Layout
-    logo: "/assets/images/logos/imca-cat-logo-72ppi-500x500.png"
-    footer_content: "Copyright © IMCA-CAT 2024."
-  
-    # Google Analytics
-    analytics:
-      provider: "google_gtag"
-      google_gtag:
-        tracking_id: "G-TQWJCGVZMZ"
+  enable_copy_code_button: true
+ 
+  # Color scheme
+  color_scheme: dark # available: "dark", "light", "air", "sun", "aqua", "forest", "midnight", "autumn", "dusk"
+  # Custom colors
+  primary_color: "#0a0a0a"
+  #accent_color: "#c7254e"
+  accent_color: #285ee7
+ 
+  # Layout
+  layouts_dir: _layouts/
+  logo: "/assets/images/logos/imca-cat-logo-72ppi-500x500.png"
+  footer_content: "Copyright © IMCA-CAT 2024."
+ 
+  # Google Analytics
+  analytics:
+    provider: "google_gtag"
+    google_gtag:
+      tracking_id: "G-TQWJCGVZMZ"
+...

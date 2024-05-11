@@ -14,6 +14,7 @@ group :jekyll_plugins do
   gem "jekyll-asciidoc"
   gem "jekyll-asciinema"
   gem "jekyll_asciidoctor_pdf"
+  gem "jekyll-include-cache"
   gem "jekyll-toc"
   gem "jekyll-feed"
   gem "jekyll-optional-front-matter"
