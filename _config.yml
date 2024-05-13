@@ -134,25 +134,13 @@ sass:
 collections:
   posts:
     output: true                                  # Enable output for posts collection
-    name: News                                    # Give the collection a name
     permalink: /:path/:title                      # Permalink format
-    nav_exclude: false                            # Exclude the collection from the navigation (default: false)
-    nav_fold: false                               # Fold the collection in the navigation      (default: false)
-    search_exclude: false                         # Exclude the collection from the search     (default: false)
   tests:
     output: true                                  # Enable output for tests collection
-    name: Tests                                   # Give the collection a name
     permalink: /:path/:title                      # Permalink format
-    nav_exclude: false                            # Exclude the collection from the navigation (default: false)
-    nav_fold: false                               # Fold the collection in the navigation      (default: false)
-    search_exclude: false                         # Exclude the collection from the search     (default: false)
   docs:
     output: true                                  # Enable output for docs collection
-    name: Documents                               # Give the collection a name
     permalink: /:title                            # Permalink format
-    nav_exclude: false                            # Exclude the collection from the navigation (default: false)
-    nav_fold: false                               # Fold the collection in the navigation      (default: false)
-    search_exclude: false                         # Exclude the collection from the search     (default: false)
 
 # Security settings
 safe                : false                        # If true, disables custom plugins
