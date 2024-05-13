@@ -22,7 +22,9 @@ toc::[]
 Red: EA332C +
 Blue: 285EE7
 
-I need to add some style info
+I need to add some style info.
+
+I am, essentially, about to run a marathon for the next two weeks.
 
 [#index_red_header]
 == Index Red: EA332C

@@ -1,0 +1,91 @@
+{
+// .liquidrc
+// JSONC Format (Didn't bother to look up the spec, sorry)
+// Configuration file for processing Liquid files in a Just-The-Docs Jekyll project
+"version": 1,
+
+// Define the environments that can be used within Liquid templates
+"environments": {
+    "development": {
+    "color_scheme": "light" // Default color scheme in development environment
+    },
+    "production": {
+    "color_scheme": "nil" // Default to no specific color scheme in production
+    }
+},
+
+// Define global objects accessible in all templates
+"globals": {
+    "site": {
+    "title": "this_string_is_in_.liquidrc",
+    "url": "http://this_string_is_in_.liquidrc",
+    "baseurl": "",
+    "color_scheme": "light", // Default color scheme
+    "descriptions": true // Enable or disable descriptions globally
+    }
+},
+
+// Filters are custom Liquid filters used in your project
+"filters": [
+    {
+    "name": "custom_filter",
+    "description": "A custom Liquid filter for specific transformations",
+    "implementation": "path/to/implementation.rb"
+    }
+],
+
+// Tags are custom Liquid tags used in your project
+"tags": [
+    {
+    "name": "custom_tag",
+    "description": "A custom Liquid tag for special content insertion",
+    "implementation": "path/to/implementation.rb"
+    }
+],
+
+// Specifies the directories that contain Liquid files or templates
+"include": [
+    "_includes",
+    "_layouts",
+    "_sass"
+],
+
+// Exclude certain files or directories from being processed by Liquid tools
+"exclude": [
+    "node_modules",
+    "_site",
+    ".jekyll-cache"
+],
+
+// Linter configuration for Liquid templates, if applicable
+"linter": {
+    "enabled": true,
+    "config": {
+    "ignore_files": [
+        "**/vendor/**" // Ignore all files in vendor directories
+    ],
+    "rules": {
+        "tag_indent": "error",
+        "object_whitespace": "warning"
+    }
+    }
+},
+
+// Formatter settings specifically for Liquid files, if tools support this file
+"formatter": {
+    "line_length": 80,
+    "indent_size": 2,
+    "spaces_around_operators": true
+},
+
+// Documentation links or notes
+"documentation": [
+    "https://shopify.github.io/liquid/",
+    "https://jekyllrb.com/",
+    "https://pmarsceill.github.io/just-the-docs/"
+],
+
+// Comments
+// Ensure to update this file as your project evolves, particularly when adding
+// new Liquid tags, filters, or significant global variables.
+}

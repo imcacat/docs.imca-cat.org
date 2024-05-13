@@ -1,0 +1,15 @@
+// SCSS for Light Red Theme
+$color-scheme: imca_light_red !default;
+$body-background-color: #FFFFFF !default; // White for the main body background
+$body-heading-color: #EA332C !default; // Bright red for main headings
+$body-text-color: #333333 !default; // Standard dark grey for text, ensuring good contrast on light background
+$link-color: #F0443A !default; // Lighter red for hyperlinks
+$nav-child-link-color: #333333 !default; // Dark grey, matching the sidebar text for navigation
+$sidebar-color: #FFFFFF !default; // White, matching the footer and header backgrounds
+$base-button-color: #BF241D !default; // Dark red used for button backgrounds, matching tertiary headings
+$btn-primary-color: #EA332C !default; // Primary red for primary buttons
+$code-background-color: #F9F9F9 !default; // Very light grey suitable for code blocks
+$feedback-color: darken(#FFFFFF, 3%) !default; // Darkened white for feedback areas, subtle yet distinct
+$table-background-color: #FFFFFF !default; // White for table backgrounds to keep the light theme consistent
+$search-background-color: #FFFFFF !default; // White for search areas, maintaining uniformity
+$search-result-preview-color: #333333 !default; // Dark grey for high readability against the light search background

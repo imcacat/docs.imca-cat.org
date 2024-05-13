@@ -1,0 +1,128 @@
+= Welcome Home
+:page-layout: default
+:page-title: Welcome (adoc)
+:nav_order: 1
+:page-permalink: /adoc
+//:nofooter:
+:icons: font
+:reproducible:
+:sectnums:
+:toc: macro
+:toc-title: Table of Contents
+:toclevels: 1
+:imagesdir: /assets/images
+:revdate: 0.1, 2024-05-01
+
+// Globals
+:aps-anl-gov-url: https://www.aps.anl.gov
+:aps-user-checkin-url: https://beam.aps.anl.gov/pls/apsweb/usercheckin.start_page
+:imca-cat-url: https://imca-cat.org
+:imca-cat-board-url: https://www.imca-cat.org/IMCA+Board+Portal
+:imca-cat-member-url: https://www.imca-cat.org/IMCA+Member+Portal
+:imca-cat-subscriber-url: https://www.imca-cat.org/IMCA-CAT+Subscriber+Portal
+:imca-cat-staff-url: https://www.imca-cat.org/Staff-net
+:imca-cat-new-technologies-url: https://www.imca-cat.org/Working+Group+New+Technologies
+:imca-cat-beamline-upgrade-url: https://www.imca-cat.org/Beamline+Upgrade
+:documentation-guide-url: https://docs.imca-cat.org/guides/document
+
+toc::[]
+
+== Introduction
+
+I was not able to get through the AsciiDoc configuration side of things, although I do want to complete it, as I plan on using it myself for lots of things.
+Anyway.
+Making content in markdown for now.
+
+{: .warning }
+This is supposed to be a warning callout.
+
+=== Warning Syntax
+
+WARNING: Wolpertingers are known to nest in server racks.
+Enter at your own risk.
+
+=== Admonition Callout
+
+[IMPORTANT]
+.Feeding the Werewolves
+====
+While werewolves are hardy community members, keep in mind the following dietary concerns:
+
+. They are allergic to cinnamon.
+. More than two glasses of orange juice in 24 hours makes them howl in harmony with alarms and sirens.
+. Celery makes them sad.
+====
+
+[source,ruby]
+----
+require 'sinatra' <1>
+
+get '/hi' do <2> <3>
+  "Hello World!"
+end
+----
+<1> Library import
+<2> URL mapping
+<3> Response block
+
+{: .custom }
+This is supposed to be a custom callout.
+
+[source,xml]
+----
+<section>
+  <title>Section Title</title> <!--1-->
+</section>
+----
+<1> An example of source code.
+
+[source,asciidoc,line-comment=]
+----
+-- <1>
+A paragraph in an open block.
+--
+----
+<1> An open block delimiter.
+
+[source,erlang,line-comment=%]
+----
+-module(hello_world).
+-compile(export_all).
+
+hello() ->
+    io:format("hello world~n"). % <1>
+----
+<1> A callout behind a custom line comment prefix.
+
+----
+line of code // <1>
+line of code # <2>
+line of code ;; <3>
+line of code <!--4-->
+----
+<1> A callout behind a line comment for C-style languages.
+<2> A callout behind a line comment for Ruby, Python, Perl, etc.
+<3> A callout behind a line comment for Clojure.
+<4> A callout behind a line comment for XML or SGML languages like HTML.
+
+Welcome to our documentation site; your guide to operations at the IMCA-CAT beamline.
+
+== Explore
+
+* link:{aps-anl-gov-url}[APS]
+* link:{imca-cat-beamline-upgrade-url}[IMCA-CAT Beamline Upgrade]
+* link:{imca-cat-board-url}[IMCA-CAT Board]
+* link:{imca-cat-member-url}[IMCA-CAT Members]
+* link:{imca-cat-new-technologies-url}[IMCA-CAT New Technologies]
+* link:{imca-cat-staff-url}[IMCA-CAT Staff]
+* link:{imca-cat-subscriber-url}[IMCA-CAT Subscribers]
+* link:{imca-cat-url}[IMCA-CAT]
+
+
+== Additional Resources
+
+You can add links to external resources or other sections of the documentation. Please reference the following guide for instructions on how to update this site.
+
+* link:{documentation-guide-url}[Documentation Guide]
+
+

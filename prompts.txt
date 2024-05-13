@@ -1,0 +1,55 @@
+== prompt
+You know what I do, and where I work, and what I am broadly tasked with, correct? If so, please help me with the following task. If not, then, please have a nice day growing ever stronger. bye!
+
+== task
+I have this landing page in my jekyll site. Please update it to be the absolute best landing page that a small group of 10 scientists could possibly need for guides on how to operate their endeavor as efficiently as possible.
+
+== content
+---
+layout: default
+title: "Welcome - MD"
+nav_order: 2
+permalink: /md
+---
+
+# Welcome Home
+
+## Introduction
+
+Blue label
+{: .label .label-blue }
+
+### Warning Syntax
+
+{: .note-title }
+> My note title
+>
+> A paragraph with a custom title callout
+
+### Warning Callout
+
+{: .warning }
+> A warning
+>
+> Another paragraph
+>
+> The last paragraph
+
+
+### Admonition Callout
+
+{: .important }
+**Feeding the Werewolves**
+While werewolves are hardy community members, keep in mind the following dietary concerns:
+
+- They are allergic to cinnamon.
+- More than two glasses of orange juice in 24 hours makes them howl in harmony with alarms and sirens.
+- Celery makes them sad.
+
+```ruby
+require 'sinatra' # Library import
+
+get '/hi' do # URL mapping
+  "Hello World!" # Response block
+end
+```

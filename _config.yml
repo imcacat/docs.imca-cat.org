@@ -109,6 +109,10 @@ collections:
     output: true                                  # Enable output for posts collection
   tests:
     output: true                                  # Enable output for tests collection
+    name: Tests                                   # Give the collection a name
+    nav_exclude: true                             # Exclude the collection from the navigation (default: false)
+    nav_fold: true                                # Fold the collection in the navigation      (default: false)
+    search_exclude: true                          # Exclude the collection from the search     (default: false)
   docs:
     output: true                                  # Enable output for docs collection
     permalink: /:path/:title                      # Permalink format for docs
@@ -247,12 +251,20 @@ just_the_docs:
   enable_copy_code_button: true
  
   # Color scheme
-  color_scheme: dark # available: "dark", "light", "air", "sun", "aqua", "forest", "midnight", "autumn", "dusk"
+  color_scheme: light # available: "dark", "light", "air", "sun", "aqua", "forest", "midnight", "autumn", "dusk"
   # Custom colors
   primary_color: "#0a0a0a"
   #accent_color: "#c7254e"
   accent_color: #285ee7
- 
+
+  callouts:
+    warning:
+      title: Warning
+      color: red
+    custom:
+      color: pink
+      opacity: 0.3
+
   # Layout
   layouts_dir: _layouts/
   logo: "/assets/images/logos/imca-cat-logo-72ppi-500x500.png"

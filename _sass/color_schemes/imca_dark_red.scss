@@ -1,0 +1,15 @@
+// SCSS for Dark Red Theme
+$color-scheme: dark !default;
+$body-background-color: #333333 !default; // Dark grey for the main body background
+$body-heading-color: #F0443A !default; // Bright red for main headings
+$body-text-color: #FFFFFF !default; // White for text to ensure readability on dark backgrounds
+$link-color: #FF6666 !default; // Brighter red for hyperlinks
+$nav-child-link-color: #FFFFFF !default; // White, matching the sidebar text for navigation
+$sidebar-color: #333333 !default; // Dark grey, matching the footer and header backgrounds
+$base-button-color: #EA332C !default; // Primary red used for button backgrounds
+$btn-primary-color: #F0443A !default; // Bright red for primary buttons
+$code-background-color: #1A1A1A !default; // Dark grey suitable for code blocks
+$feedback-color: darken(#333333, 3%) !default; // Darkened version of the body background for feedback areas
+$table-background-color: #333333 !default; // Dark grey matching the body background for table styling
+$search-background-color: #333333 !default; // Dark grey for search areas, maintaining consistency
+$search-result-preview-color: #FFFFFF !default; // White for high readability against the dark search background

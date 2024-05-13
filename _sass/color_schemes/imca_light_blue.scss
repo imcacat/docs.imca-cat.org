@@ -1,0 +1,15 @@
+// SCSS
+$color-scheme: light !default;
+$body-background-color: #FFFFFF !default; // Updated to match $background-light
+$body-heading-color: #285EE7 !default; // Updated to match $primary-color for headers
+$body-text-color: #333333 !default; // Updated to match $body-text
+$link-color: #3A6EF4 !default; // Updated to match $link-color
+$nav-child-link-color: #333333 !default; // Retaining similar usage, matches updated body text color
+$sidebar-color: #FFFFFF !default; // Updated to match sidebar with $background-light
+$base-button-color: #f7f7f7 !default; // No change, keeping existing light grey
+$btn-primary-color: #285EE7 !default; // Updated to match $primary-color for primary buttons
+$code-background-color: #F2F2FF !default; // Updated to match $background-code
+$feedback-color: darken(#FFFFFF, 3%) !default; // Darkened version of the white background for feedback
+$table-background-color: #FFFFFF !default; // No change, keeping existing white
+$search-background-color: #FFFFFF !default; // No change, keeping existing white
+$search-result-preview-color: #333333 !default; // Retaining standard dark grey, for readability in search previews

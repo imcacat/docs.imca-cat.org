@@ -1,0 +1,15 @@
+// SCSS for Dark Blue Theme
+$color-scheme: dark !default;
+$body-background-color: #222233 !default; // Dark blue-gray for the main body background
+$body-heading-color: #3A6EF4 !default; // Bright blue for main headings
+$body-text-color: #FFFFFF !default; // White for text to ensure readability on dark backgrounds
+$link-color: #6EA1F4 !default; // Lighter blue for hyperlinks
+$nav-child-link-color: #FFFFFF !default; // White, for consistency with body text color in navigation
+$sidebar-color: #222233 !default; // Same as body background, for a cohesive look
+$base-button-color: #285EE7 !default; // Blue for base buttons, using the border color for consistency
+$btn-primary-color: #3A6EF4 !default; // Bright blue for primary buttons
+$code-background-color: #1A1A1A !default; // Very dark gray for code blocks
+$feedback-color: darken(#222233, 5%) !default; // Slightly darkened version of the body background for feedback areas
+$table-background-color: #222233 !default; // Dark blue-gray, matching the body background for tables
+$search-background-color: #333344 !default; // A slightly different dark blue-gray for search areas, for distinction
+$search-result-preview-color: #FFFFFF !default; // White for high readability against the dark search background
