@@ -1,4 +1,4 @@
-#              file : _config.yml
+#              file : _config.development.yml
 #              path : $PROJECT/$file
 #              repo : docs.imca-cat.org
 #              type : configuration
@@ -6,62 +6,87 @@
 #      repo_ssh_url : git@github.com:imcacat/docs.imca-cat.org.git
 
 #           purpose :
-# * Production Jekyll configuration file:
-# * `bundle exec jekyll serve`
+# * Local development, override order:
+# * `bundle exec jekyll serve --config _config.yml,_config.development.yml`
+# ** _config.development.yml {key:value}
+# ** _config.yml {key:value}
 
 #       description :
-# * This file contains production(default)-specific settings for the overall Jekyll site.
+# This file contains development-specific settings for the overall Jekyll site.
+# It primarily sets the local development environment's base URL to localhost:4000.
+# Ensure to call this config along with the main config using the following command
+# to override the production settings appropriately:
+#
+#   bundle exec jekyll serve --config _config.yml,_config.development.yml
 
 #             notes :
-# * Please see `_config.template.yml` for more information.
+# * URL Configuration: Specifies local development server settings.
+# * Theme: Uses the 'just-the-docs' Jekyll theme.
+# * Plugins:
+# ** 'jekyll-asciidoc'
+# ** 'jekyll-include-cache'
+# ** 'jekyll-feed'
+# * If working collaboratively, one could create their own _config.<username>.yml file and append it to the `--config` option.
+# ** I left all of the fields in to show a larger set of configurable options.
+# ** I feel compelled to cut the line length off at 80, but I recently moved myself to 120, and now I'm not even sure anymore. Sorry. Feel free to do whatever you like to the formatting ;)
+
+#       information :
+# For further configuration details or adjustments, refer to the Jekyll documentation
+# or the project's README file.
 
 #            config :
----
-title               : docs.imca-cat.org
-description         : A place for documents and things.
-url                 : "https://docs.imca-cat.org"       # The base URL of your site
-baseurl             : ""                                # The subpath of your site, e.g., /blog (they really picked a `sub`-optimal key name here)
-host                : 0.0.0.0                           # The IP address to bind Jekyll server
-port                : 443                               # The port to use for the Jekyll server
+title                   : "docs.imca-cat.org - Development" # The thing at the top of your browser (probably the top)
+url                     : "http://localhost:4000"           # The base URL of your site
+baseurl                 : ""                                # The subpath of your site, e.g., /blog
+host                    : 127.0.0.1                         # The IP address to bind Jekyll server
+port                    : 4000                              # The port to use for the Jekyll server
 
 # Language settings
-lang               : en-US
-
-# Server and URL configuration
-detach             : false                        # If true, Jekyll will detach from the terminal
-show_dir_listing   : false                        # If true, show directory listings
-
-# Output settings
-permalink          : date                         # Sets the permalink format
-paginate_path      : /page:num                    # Pagination path
-timezone           : America/Chicago              # Timezone setting for your site
-
-# Output verbosity
-quiet              : false                        # If true, suppresses most build output
-verbose            : false                        # If true, increases the verbosity of the output
+lang                    : en-US
 
 # Theme configuration
-theme               : just-the-docs                # Specifies the theme
+theme                   : just-the-docs                     # Specifies the theme
+# Can't get it working. Sorry. Will fiddle later.
+# color_scheme            : imca_light_red
+logo                    : "assets/images/logos/imca-cat-logo-72ppi-500x500.png"
+footer_content          : "Copyright © IMCA-CAT 2024."
+
+# Custom colors
+primary_color: "#ea332c"
+#accent_color: "#c7254e"
+accent_color: #285ee7
+
+callouts:
+  warning:
+    title: Warning
+    color: yellow
+  danger:
+    title: Danger
+    color: red
+  # custom:
+  #   color: pink
+  #   opacity: 0.3
+
+# Output verbosity
+quiet                   : false                             # If true, suppresses most build output
+verbose                 : true                              # If true, increases the verbosity of the output
 
 # Filtering Content
-show_drafts         : null
-limit_posts         : 0
-future              : false
-unpublished         : false
-heading_anchors     : true
-nav_enabled         : true
-
-# External links in navigation
-nav_external_links :
-  "imca_cat.org": "https://imca-cat.org"          # Used in a layout... I think?
+show_drafts             : true
+limit_posts             : 0
+future                  : true
+unpublished             : true
+enable_copy_code_button : true
+heading_anchors         : true
+nav_enabled             : true
 
 # Directories
-collections_dir     : ./src/collections # Directory where collections are stored
-data_dir            : ./_data           # Directory for data files
-destination         : ./_site           # Destination folder where the site will be built
-includes_dir        : ./_includes       # Directory for include files
-layouts_dir         : ./_layouts        # Directory for layouts
-source              : ./src             # Source folder
+collections_dir         : ./_collections                    # Directory where collections are stored
+data_dir                : ./_data                           # Directory for data files
+destination             : ./_site                           # Destination folder where the site will be built
+includes_dir            : ./_includes                       # Directory for include files
+layouts_dir             : ./_layouts                        # Directory for layouts
+source                  : .                                 # Source folder
 
 # Plugins (Some plugins may need to be added to the Gemfile)
 plugins:
@@ -74,9 +99,8 @@ strict_front_matter : false
 
 # Liquid profiler
 # Generate a Liquid rendering profile to help you identify performance bottlenecks.
-# profile: BOOL
-# --profile
 profile: true
+
 liquid:
   error_mode: warn
   # error_mode: strict
@@ -93,6 +117,7 @@ incremental         : false
 # Markdown Processors
 kramdown:
   auto_ids          : true
+  syntax_highlighter: rouge
   entity_output     : as_char
   toc_levels        : [1, 2, 3, 4, 5, 6]
   smart_quotes      : lsquo,rsquo,ldquo,rdquo
@@ -109,25 +134,47 @@ sass:
 collections:
   posts:
     output: true                                  # Enable output for posts collection
+    name: News                                    # Give the collection a name
+    permalink: /:path/:title                      # Permalink format
+    nav_exclude: false                            # Exclude the collection from the navigation (default: false)
+    nav_fold: false                               # Fold the collection in the navigation      (default: false)
+    search_exclude: false                         # Exclude the collection from the search     (default: false)
   tests:
     output: true                                  # Enable output for tests collection
     name: Tests                                   # Give the collection a name
-    nav_exclude: true                             # Exclude the collection from the navigation (default: false)
-    nav_fold: true                                # Fold the collection in the navigation      (default: false)
-    search_exclude: true                          # Exclude the collection from the search     (default: false)
+    permalink: /:path/:title                      # Permalink format
+    nav_exclude: false                            # Exclude the collection from the navigation (default: false)
+    nav_fold: false                               # Fold the collection in the navigation      (default: false)
+    search_exclude: false                         # Exclude the collection from the search     (default: false)
   docs:
     output: true                                  # Enable output for docs collection
-    nav_exclude: false
-    nav_fold: false
-    permalink: /:path/:title                      # Permalink format for docs
+    name: Documents                               # Give the collection a name
+    permalink: /:title                            # Permalink format
+    nav_exclude: false                            # Exclude the collection from the navigation (default: false)
+    nav_fold: false                               # Fold the collection in the navigation      (default: false)
+    search_exclude: false                         # Exclude the collection from the search     (default: false)
 
 # Security settings
 safe                : false                        # If true, disables custom plugins
+
+asciidoc: {}
+asciidoctor:
+  base_dir: :docdir
+  safe: unsafe
+  attributes:
+    icons: font
+    idseparator: _
+    stylesdir: css
+    source-highlighter: coderay
 
 # Files and directories to include and exclude from the build
 # from https://github.com/jekyll/jekyll/blob/master/lib/site_template/_config.yml:
 include:
   - .htaccess
+  - assets
+  - _collections
+  - home.asciidoc
+  - home.markdown
 exclude:
   - .sass-cache/
   - .jekyll-cache/
@@ -179,4 +226,58 @@ encoding            : "utf-8"                      # Character encoding for file
 # Plugins
 #plugins_dir         : _plugins # takes an array of strings and loads plugins in that order
 #whitelist           : []
+# callouts:
+#   warning:
+#     title: Warning
+#     color: red
+#   # custom:
+#   #   color: pink
+#   #   opacity: 0.3
+
+mermaid:
+  # Version of mermaid library
+  # Pick an available version from https://cdn.jsdelivr.net/npm/mermaid/
+  version: assets/js/mermaid.min.js
+
+# Navigation
+aux_links:
+  "IMCA-CAT Website": "https://imca-cat.org"
+aux_links_new_tab: true
+
+# Enable or disable the site search
+# Supports true (default) or false
+search_enabled: false
+search_full_content: true
+  
+search:
+  # Split pages into sections that can be searched individually
+  # Supports 1 - 6, default: 2
+  heading_level: 2
+  # Maximum amount of previews per search result
+  # Default: 3
+  previews: 3
+  # Maximum amount of words to display before a matched word in the preview
+  # Default: 5
+  preview_words_before: 5
+  # Maximum amount of words to display after a matched word in the preview
+  # Default: 10
+  preview_words_after: 10
+  # Set the search token separator
+  # Default: /[\s\-/]+/
+  # Example: enable support for hyphenated search words
+  tokenizer_separator: /[\s/]+/
+  # Display the relative url in search results
+  # Supports true (default) or false
+  rel_url: true
+  # Enable or disable the search button that appears in the bottom right corner of every page
+  # Supports true or false (default)
+  button: true
+  # Focus the search input by pressing `ctrl + focus_shortcut_key` (or `cmd + focus_shortcut_key` on macOS)
+  focus_shortcut_key: 'k'
+ 
+# Google Analytics
+analytics:
+  provider: "google_gtag"
+  google_gtag:
+    tracking_id: "G-TQWJCGVZMZ"
 ...
