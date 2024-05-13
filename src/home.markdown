@@ -63,6 +63,7 @@ end
 
 Enhance your knowledge and efficiency with these curated resources:
 
+- **[Color Scheme](/color-scheme)**: Explore the latest color-scheme conducted by our team.
 - **[Research Publications](/publications)**: Explore the latest research conducted by our team.
 - **[Software Tools](/software)**: Discover tools that can streamline your workflows.
 

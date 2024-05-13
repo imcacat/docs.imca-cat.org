@@ -1,0 +1,36 @@
+= IMCA-CAT Guides
+:showtitle:
+:page-navtitle: First Entry
+:page-excerpt: Excerpt goes here.
+:page-root: ../../../
+:layout: default
+:title: Color Pal
+:doctype: book
+:collection: docs
+:nav_order: 4
+:nav_hidden: false
+:page-permalink: /guides
+:nofooter:
+:reproducible:
+:sectnums:
+:toc: macro
+:toc-title: Table of Contents
+:toclevels: 2
+:imagesdir: /assets/images
+:revdate: 0.1, 2024-05-01
+:source-highlighter: rouge
+:icons: font
+:mermaid: true
+:revdate: 0.1, 2024-05-01
+:source-highlighter: rouge
+
+toc::[]
+
+== Introduction
+
+Red: EA332C +
+Blue: 285EE7
+
+I need to add some style info.
+
+I am, essentially, about to 

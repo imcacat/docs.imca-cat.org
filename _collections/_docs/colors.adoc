@@ -1,19 +1,29 @@
 = IMCA-CAT Color Palette
+:showtitle:
+:page-navtitle: First Entry
+:page-excerpt: Excerpt goes here.
+:page-root: ../../../
 :layout: default
-:title: Color Palette
+:title: Color Pal
+:doctype: book
 :collection: docs
-:nav_order: 4
-:page-permalink: /colors
+:nav_order: 3
+:nav_hidden: false
+:page-permalink: /color-scheme
 :nofooter:
 :reproducible:
 :sectnums:
 :toc: macro
 :toc-title: Table of Contents
-:toclevels: 1
+:toclevels: 2
 :imagesdir: /assets/images
 :revdate: 0.1, 2024-05-01
 :source-highlighter: rouge
-//:rouge-style: imca_cat
+:icons: font
+:mermaid: true
+:revdate: 0.1, 2024-05-01
+:source-highlighter: rouge
+:rouge-style: imca_cat
 
 toc::[]
 

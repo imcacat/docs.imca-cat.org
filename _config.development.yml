@@ -77,14 +77,16 @@ limit_posts             : 0
 future                  : true
 unpublished             : true
 enable_copy_code_button : true
+heading_anchors         : true
+nav_enabled             : true
 
 # Directories
-collections_dir         : ./src/collections                 # Directory where collections are stored
+collections_dir         : ./_collections                    # Directory where collections are stored
 data_dir                : ./_data                           # Directory for data files
 destination             : ./_site                           # Destination folder where the site will be built
 includes_dir            : ./_includes                       # Directory for include files
 layouts_dir             : ./_layouts                        # Directory for layouts
-source                  : ./src                             # Source folder
+source                  : .                                 # Source folder
 
 # Plugins (Some plugins may need to be added to the Gemfile)
 plugins:
@@ -169,6 +171,10 @@ asciidoctor:
 # from https://github.com/jekyll/jekyll/blob/master/lib/site_template/_config.yml:
 include:
   - .htaccess
+  - assets
+  - _collections
+  - home.asciidoc
+  - home.markdown
 exclude:
   - .sass-cache/
   - .jekyll-cache/
@@ -236,10 +242,11 @@ mermaid:
 # Navigation
 aux_links:
   "IMCA-CAT Website": "https://imca-cat.org"
+aux_links_new_tab: true
 
 # Enable or disable the site search
 # Supports true (default) or false
-search_enabled: true
+search_enabled: false
 search_full_content: true
   
 search:
