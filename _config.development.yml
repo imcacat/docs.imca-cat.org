@@ -1,4 +1,4 @@
-#              file : _config.yml
+#              file : _config.development.yml
 #              path : $PROJECT/$file
 #              repo : docs.imca-cat.org
 #              type : configuration
@@ -6,52 +6,56 @@
 #      repo_ssh_url : git@github.com:imcacat/docs.imca-cat.org.git
 
 #           purpose :
-# * Production Jekyll configuration file:
-# * `bundle exec jekyll serve`
+# * Local development, override order:
+# * `bundle exec jekyll serve --config _config.yml,_config.development.yml`
+# ** _config.development.yml {key:value}
+# ** _config.yml {key:value}
 
 #       description :
-# * This file contains production(default)-specific settings for the overall Jekyll site.
+# This file contains development-specific settings for the overall Jekyll site.
+# It primarily sets the local development environment's base URL to localhost:4000.
+# Ensure to call this config along with the main config using the following command
+# to override the production settings appropriately:
+#
+#   `bundle exec jekyll serve --config _config.yml,_config.development.yml`
 
 #             notes :
-# * Please see `_config.template.yml` for more information.
+# * URL Configuration: Specifies local development server settings.
+# * Theme: Uses the 'just-the-docs' Jekyll theme.
+# * Plugins:
+# ** 'jekyll-asciidoc'
+# ** 'jekyll-include-cache'
+# ** 'jekyll-feed'
+# * If working collaboratively, one could create their own _config.<username>.yml file and append it to the `--config` option.
+# ** I left all of the fields in to show a larger set of configurable options.
+# ** I feel compelled to cut the line length off at 80, but I recently moved myself to 120, and now I'm not even sure anymore. Sorry. Feel free to do whatever you like to the formatting ;)
+
+#       information :
+# For further configuration details or adjustments, refer to the Jekyll documentation
+# or the project's README file.
 
 #            config :
----
-title               : docs.imca-cat.org
-description         : A place for documents and things.
-url                 : "https://docs.imca-cat.org"       # The base URL of your site
-baseurl             : ""                                # The subpath of your site, e.g., /blog (they really picked a `sub`-optimal key name here)
-host                : 0.0.0.0                           # The IP address to bind Jekyll server
-port                : 443                               # The port to use for the Jekyll server
+title               : "docs.imca-cat.org - Development" # The thing at the top of your browser (probably the top)
+url                 : "http://localhost:4000"           # The base URL of your site
+baseurl             : ""                                # The subpath of your site, e.g., /blog
+host                : 127.0.0.1                         # The IP address to bind Jekyll server
+port                : 4000                              # The port to use for the Jekyll server
 
 # Language settings
-lang               : en-US
-
-# Server and URL configuration
-detach             : false                        # If true, Jekyll will detach from the terminal
-show_dir_listing   : false                        # If true, show directory listings
-
-# Output settings
-permalink          : date                         # Sets the permalink format
-paginate_path      : /page:num                    # Pagination path
-timezone           : America/Chicago              # Timezone setting for your site
-
-# Output verbosity
-quiet              : false                        # If true, suppresses most build output
-verbose            : false                        # If true, increases the verbosity of the output
+lang                : en-US
 
 # Theme configuration
 theme               : just-the-docs                # Specifies the theme
 
-# Filtering Content
-show_drafts         : null
-limit_posts         : 0
-future              : false
-unpublished         : false
+# Output verbosity
+quiet               : false  # If true, suppresses most build output
+verbose             : true   # If true, increases the verbosity of the output
 
-# External links in navigation
-nav_external_links :
-  "imca_cat.org": "https://imca-cat.org"          # Used in a layout... I think?
+# Filtering Content
+show_drafts         : true
+limit_posts         : 0
+future              : true
+unpublished         : true
 
 # Directories
 collections_dir     : ./src/collections # Directory where collections are stored

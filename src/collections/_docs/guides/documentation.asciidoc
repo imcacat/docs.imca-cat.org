@@ -1,13 +1,21 @@
 = Documentation Guide
-:doctype: book
-:toc: left
-:icons: font
-:imagesdir: assets/images
-:source-highlighter: highlightjs
-:pdf-stylesdir: themes/pdf-styles
-:pdf-style: themes/pdf-styles/custom-theme.yml
+:page-layout: default
+:page-title: Documentation Guide
+:collection: docs
+:nav_order: 2
+:page-permalink: /guides/document
+//:nofooter:
+:reproducible:
+:sectnums:
+:toc: macro
+:toc-title: Table of Contents
+:toclevels: 1
+:imagesdir: /assets/images
+:revdate: 0.1, 2024-05-01
 
-= Table of Contents
+toc::[]
+
+== Introduction
 1. Deviations <<deviations>>
 2. Creating Documentation Pages <<creating-documentation-pages>>
 3. Embedding Assets <<embedding-assets>>
@@ -181,4 +189,3 @@ hg clone [repository_URL]
 |===
 | Deviation from CommonMark Standard: | The use of `[horizontal]` and `|===` for creating a table-like structure.
 |===
-```
