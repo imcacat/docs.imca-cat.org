@@ -1,17 +1,26 @@
 = Documentation Guide
-:page-layout: default
-:page-title: Documentation Guide
+:showtitle:
+:page-navtitle: First Entry
+:page-excerpt: Excerpt goes here.
+:page-root: ../../../
+:layout: default
+:title: "hrm"
+:doctype: book
 :collection: docs
-:nav_order: 2
-:page-permalink: /guides/document
-//:nofooter:
+:nav_order: 0
+:nav_hidden: false
+:page-permalink: /documentation-guide
+:nofooter:
 :reproducible:
 :sectnums:
 :toc: macro
 :toc-title: Table of Contents
-:toclevels: 1
+:toclevels: 2
 :imagesdir: /assets/images
-:revdate: 0.1, 2024-05-01
+:revdate: 0.2, 2024-05-13
+:source-highlighter: rouge
+:icons: font
+:mermaid: true
 
 toc::[]
 

@@ -57,6 +57,12 @@ primary_color: "#ea332c"
 accent_color: #285ee7
 
 callouts:
+  note:
+    title: Note
+    color: purple
+  important:
+    title: Important
+    color: blue
   warning:
     title: Warning
     color: yellow

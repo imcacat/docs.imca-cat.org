@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "A Chat with A GPT, version 4.something-spicy"
+collection: tests
+---
+
 Certainly! Here's a detailed explanation of how to clone the repository, make changes, and publish using Mercurial for a Jekyll-based documentation site with the latest Just-The-Docs theme:
 
 ## How to Clone the Repository, Make Changes, and Publish (Mercurial)

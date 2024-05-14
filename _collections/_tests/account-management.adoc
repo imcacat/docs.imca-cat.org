@@ -5,8 +5,8 @@
 :collection: tests
 :nav_order: 1
 :nav_exclude: true
-//:page-permalink: /tests/account-management
-//:nofooter:
+:page-permalink: /tests/account-management
+:nofooter:
 :reproducible:
 :sectnums:
 :toc: macro
