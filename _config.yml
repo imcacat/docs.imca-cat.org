@@ -37,7 +37,7 @@
 #            config :
 title                   : "docs.imca-cat.org" # The thing at the top of your browser (probably the top)
 url                     : "https://imcacat.github.io/"           # The base URL of your site. it will not be this long term
-baseurl                 : "docs.imca-cat.org"                                # The subpath of your site, e.g., /blog . it will not be this long term
+baseurl                 : ""                                # The subpath of your site, e.g., /blog . it will not be this long term
 # host                    : 127.0.0.1                         # The IP address to bind Jekyll server
 # port                    : 4000                              # The port to use for the Jekyll server
 
